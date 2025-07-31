@@ -36,8 +36,8 @@ github_pr_viewer/
    ```bash
    flutter pub get
    ```
-3. **Create .env file (optional to prevent rate limiting from github) and**
-   GITHUB_ACCESS_TOKEN=<YOUR_GITHUB_ACCESS_TOKEN>
+3. **Create .env file (optional to prevent rate limiting from github) and add**
+   - GITHUB_ACCESS_TOKEN=<YOUR_GITHUB_ACCESS_TOKEN>
 
 4. **Run the app**
    ```bash
@@ -66,22 +66,22 @@ After login:
 ---
 
 ## 🚀 Other Features Implemented
-✅ Pull to refresh
-✅ Infinite scroll with pagination
-✅ Retry on error
-✅ Shimmer loading during initial load (skeletonizer)
-✅ Responsive layout
-✅ Dark mode support
-✅ Modular project structure
-✅ Error feedback via SnackBar
-✅ Token handling (simulated)
-✅ Scroll controller for dynamic loading
-✅ Token display and logging
+- ✅ Pull to refresh
+- ✅ Infinite scroll with pagination
+- ✅ Retry on error
+- ✅ Shimmer loading during initial load (skeletonizer)
+- ✅ Responsive layout
+- ✅ Dark mode support
+- ✅ Modular project structure
+- ✅ Error feedback via SnackBar
+- ✅ Token handling (simulated)
+- ✅ Scroll controller for dynamic loading
+- ✅ Token display and logging
 
 ---
 
 ## 🐞 Known Issues / Limitations
-❌ No actual GitHub OAuth — token is a dummy (abc123)
-❌ No persistent logout mechanism yet
-❌ JWT or token expiry detection not implemented (not needed for fake token)
-⚠️ Using GitHub API anonymously → rate-limited to 60 req/hr per IP
+- ❌ No actual GitHub OAuth — token is a dummy (abc123)
+- ❌ No persistent logout mechanism yet
+- ❌ JWT or token expiry detection not implemented (not needed for fake token)
+- ⚠️ Using GitHub API anonymously → rate-limited to 60 req/hr per IP
