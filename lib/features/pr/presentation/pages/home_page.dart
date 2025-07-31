@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:github_pr_viewer/core/constants/const.dart';
 import 'package:github_pr_viewer/data/models/pr_model.dart';
 import 'package:github_pr_viewer/data/services/gihub_service.dart';
+import 'package:github_pr_viewer/features/auth/presentation/login_page.dart';
 import 'package:github_pr_viewer/features/pr/presentation/widgets/pr_card.dart';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
@@ -108,6 +109,27 @@ class _HomePageState extends State<HomePage> {
     ).showSnackBar(SnackBar(content: Text(message)));
   }
 
+  void _logout() {
+    console.log("Logging out...");
+    setState(() {
+      _pullRequests.clear();
+      _currentPage = 1;
+      _isLoading = false;
+      _isInitialLoading = true;
+      _hasError = false;
+      _errorMessage = '';
+    });
+    SharedPreferences.getInstance().then((prefs) {
+      prefs.remove('token');
+      if (mounted) {
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(builder: (context) => const LoginPage()),
+        );
+      }
+    });
+  }
+
   @override
   void dispose() {
     _scrollController.removeListener(_scrollListener);
@@ -127,10 +149,18 @@ class _HomePageState extends State<HomePage> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text(widget.title),
+                Expanded(child: Text(widget.title)),
                 Text(
-                  "Login Token: ${_token ?? "loading..."}",
-                  style: const TextStyle(fontSize: 12, color: Colors.grey),
+                  "Token: ${_token ?? "loading..."}",
+                  style: const TextStyle(fontSize: 12, color: Colors.white60),
+                ),
+
+                GestureDetector(
+                  onTap: _logout,
+                  child: Padding(
+                    padding: const EdgeInsets.only(left: 8.0),
+                    child: Icon(Icons.logout, size: 18.0, color: Colors.white),
+                  ),
                 ),
               ],
             ),

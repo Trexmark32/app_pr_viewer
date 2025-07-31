@@ -82,6 +82,5 @@ After login:
 
 ## 🐞 Known Issues / Limitations
 - ❌ No actual GitHub OAuth — token is a dummy (abc123)
-- ❌ No persistent logout mechanism yet
 - ❌ JWT or token expiry detection not implemented (not needed for fake token)
 - ⚠️ Using GitHub API anonymously → rate-limited to 60 req/hr per IP
