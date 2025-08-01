@@ -84,3 +84,6 @@ After login:
 - ❌ No actual GitHub OAuth — token is a dummy (abc123)
 - ❌ JWT or token expiry detection not implemented (not needed for fake token)
 - ⚠️ Using GitHub API anonymously → rate-limited to 60 req/hr per IP
+
+## Demo Video
+- A demo.mp4 video is provided at the root of the directory for referance.
