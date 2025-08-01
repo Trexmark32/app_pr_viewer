@@ -86,4 +86,4 @@ After login:
 - ⚠️ Using GitHub API anonymously → rate-limited to 60 req/hr per IP
 
 ## Demo Video
-- A demo.mp4 video is provided at the root of the directory for referance.
+- A demo.mp4 video is provided at the root directory of the project for referance.
